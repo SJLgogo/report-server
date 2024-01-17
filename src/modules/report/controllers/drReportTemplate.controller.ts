@@ -9,6 +9,7 @@ export class drReportTemplateController {
 
     @Post('/add-template')
     async create(@Body() addReportTemplateDto:AddReportTemplateDto) {
+        console.log(addReportTemplateDto);
         return true
     }
 
