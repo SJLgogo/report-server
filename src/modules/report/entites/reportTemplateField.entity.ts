@@ -1,8 +1,9 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { ReportTemplate } from "./drReportTemplate.entity";
 
 @Entity()
-export class ReportTemplateField {
+export class ReportTemplateField extends BaseEntity {
     @ApiProperty({ description: 'id' })
     @PrimaryGeneratedColumn()  
     id:number
@@ -13,17 +14,17 @@ export class ReportTemplateField {
     @Column({ default: '' })
     defaultValue: string;
 
-    @Column()
+    @Column({ default: '' })
     express: string;
 
-    @Column()
+    @Column({ default: '' })
     fieldGroupKey: string;
 
-    @Column()
+    @Column({ default: '' })
     fieldGroupName: string;
 
     @Column()
-    fieldId: string;
+    fieldId:string;
 
     @Column()
     fieldKey: string;
@@ -36,6 +37,9 @@ export class ReportTemplateField {
 
     @Column()
     label: string;
+
+    // @ManyToOne(()=>ReportTemplate , reportTemplate=>reportTemplate.reportTemplateFields)
+    // reportTemplate: ReportTemplate;
 }
 
 

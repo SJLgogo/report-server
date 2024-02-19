@@ -1,8 +1,9 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { ReportTemplateField } from "./reportTemplateField.entity";
 
 @Entity()
-export class ReportTemplate {
+export class ReportTemplate extends BaseEntity  {
     @ApiProperty({ description: 'id' })
     @PrimaryGeneratedColumn()  
     id:number
@@ -20,4 +21,7 @@ export class ReportTemplate {
     @Column('text')
     jsonSchema: string;
     
+    // @OneToMany(()=>ReportTemplateField ,(fildes)=>fildes.fieldKey)
+    // reportTemplateFields:ReportTemplateField[]
+
 }

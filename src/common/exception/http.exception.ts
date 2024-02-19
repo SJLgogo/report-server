@@ -15,14 +15,12 @@ export class HttpExceptionFilter implements ExceptionFilter {
             : `${status >= 500 ? '服务器错误（Service Error）' : '客户端错误（Client Error）'}`;
         const nowTime = new Date().getTime();
         const errorResponse = {
-            data: {},
+            // data: {},
             message,
             code: 500,
-            date: nowTime,
-            path: request.url,
+            // date: nowTime,
+            // path: request.url,
         };
-
-        console.log(errorResponse);
 
         response.status(status);
         response.header('Content-Type', 'application/json; charset=utf-8');
