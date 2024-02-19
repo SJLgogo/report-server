@@ -5,12 +5,14 @@ import { libModules } from './config/database/database.config';
 import { ReportModule } from './modules/report/report.module';
 import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { CanvasModule } from './modules/canvas/canvas.module';
 
 
 const modules = [
   ReportModule,
   UserModule,
-  AuthModule
+  AuthModule,
+  CanvasModule
 ]
 
 
