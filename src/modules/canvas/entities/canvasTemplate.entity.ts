@@ -15,5 +15,4 @@ export class CanvasTemplate  extends BaseEntity  {
     @Column('text')
     jsonSchema: string;
     
-
 }

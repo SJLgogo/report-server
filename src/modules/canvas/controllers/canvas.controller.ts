@@ -12,9 +12,18 @@ export class CanvasController{
     async create(
         @Body() canvasSave: CanvasSave,
     ) {
-        console.log('canvasSave',canvasSave);
         return this.canvasService.addTemplate(canvasSave)
     }
 
+
+    @Post('/findByType')
+    async findByType(
+        @Body() post: {type:string},
+    ) {
+        return this.canvasService.findByType(post.type)
+    }
+
+
+    
 
 }
